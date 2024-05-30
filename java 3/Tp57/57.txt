@@ -1,0 +1,126 @@
+import java.time.LocalDate;
+
+public class Vehicule {
+    private String marque;
+    private LocalDate dateAchat;
+    private double prixAchat;
+    private double prixCourant;
+
+    // Constructeur de Vehicule
+    public Vehicule(String marque, LocalDate dateAchat, double prixAchat) {
+        this.marque = marque;
+        this.dateAchat = dateAchat;
+        this.prixAchat = prixAchat;
+        this.prixCourant = prixAchat; // Prix courant initialisé au prix d'achat
+    }
+
+    // Méthode pour afficher les informations du véhicule
+    public void affiche() {
+        System.out.println("Marque : " + marque);
+        System.out.println("Date d'achat : " + dateAchat);
+        System.out.println("Prix d'achat : " + prixAchat);
+        System.out.println("Prix courant : " + prixCourant);
+    }
+
+    // Méthode pour calculer le prix courant
+    public void calculePrix() {
+        if (prixCourant < 0) {
+            prixCourant = 0;
+        }
+    }
+
+    // Getters et setters
+    public String getMarque() {
+        return marque;
+    }
+
+    public void setMarque(String marque) {
+        this.marque = marque;
+    }
+
+    public LocalDate getDateAchat() {
+        return dateAchat;
+    }
+
+    public void setDateAchat(LocalDate dateAchat) {
+        this.dateAchat = dateAchat;
+    }
+
+    public double getPrixAchat() {
+        return prixAchat;
+    }
+
+    public void setPrixAchat(double prixAchat) {
+        this.prixAchat = prixAchat;
+    }
+
+    public double getPrixCourant() {
+        return prixCourant;
+    }
+
+    public void setPrixCourant(double prixCourant) {
+        this.prixCourant = prixCourant;
+    }
+}
+
+// Classe Voiture qui hérite de Vehicule
+public class Voiture extends Vehicule {
+    private double cylindree;
+    private int nbPortes;
+    private double puissance;
+    private double kilometrage;
+
+    // Constructeur de Voiture
+    public Voiture(String marque, LocalDate dateAchat, double prixAchat, double cylindree, int nbPortes, double puissance, double kilometrage) {
+        super(marque, dateAchat, prixAchat);
+        this.cylindree = cylindree;
+        this.nbPortes = nbPortes;
+        this.puissance = puissance;
+        this.kilometrage = kilometrage;
+    }
+
+    // Redéfinition de la méthode affiche
+    @Override
+    public void affiche() {
+        super.affiche(); // Appel de la méthode affiche de la classe parente
+        System.out.println("Cylindrée : " + cylindree);
+        System.out.println("Nombre de portes : " + nbPortes);
+        System.out.println("Puissance : " + puissance);
+        System.out.println("Kilométrage : " + kilometrage);
+    }
+
+    // Redéfinition de la méthode calculePrix
+    @Override
+    public void calculePrix() {
+        super.calculePrix(); // Appel de la méthode calculePrix de la classe parente
+        // Autres calculs spécifiques à la classe Voiture
+    }
+}
+
+// Classe Avion qui hérite de Vehicule
+public class Avion extends Vehicule {
+    private String moteur;
+    private int heuresVol;
+
+    // Constructeur de Avion
+    public Avion(String marque, LocalDate dateAchat, double prixAchat, String moteur, int heuresVol) {
+        super(marque, dateAchat, prixAchat);
+        this.moteur = moteur;
+        this.heuresVol = heuresVol;
+    }
+
+    // Redéfinition de la méthode affiche
+    @Override
+    public void affiche() {
+        super.affiche(); // Appel de la méthode affiche de la classe parente
+        System.out.println("Type de moteur : " + moteur);
+        System.out.println("Heures de vol : " + heuresVol);
+    }
+
+    // Redéfinition de la méthode calculePrix
+    @Override
+    public void calculePrix() {
+        super.calculePrix(); // Appel de la méthode calculePrix de la classe parente
+        // Autres calculs spécifiques à la classe Avion
+    }
+}

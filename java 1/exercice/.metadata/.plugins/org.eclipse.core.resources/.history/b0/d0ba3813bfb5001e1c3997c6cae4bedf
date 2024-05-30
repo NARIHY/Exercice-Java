@@ -1,0 +1,35 @@
+import java.util.Scanner;
+public class Tp33 {
+
+	public Tp33() {
+		// TODO Auto-generated constructor stub
+	}
+	/*
+	 * Ecrire un programme qui commence à lire un premier nombre n, 
+	 * puis lit des nombres jusqu’à ce que la somme des nombres lus soit au moins égale à n.
+	 */
+	public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Demander à l'utilisateur d'entrer le premier nombre n
+        System.out.print("Entrez le premier nombre n : ");
+        int n = scanner.nextInt();
+
+        int somme = 0;
+
+        // Lire des nombres jusqu'à ce que la somme soit au moins égale à n
+        while (somme < n) {
+            System.out.print("Entrez un nombre : ");
+            int nombre = scanner.nextInt();
+
+            // Ajouter le nombre à la somme
+            somme += nombre;
+        }
+
+        // Afficher la somme finale
+        System.out.println("La somme des nombres est au moins égale à " + n + ".");
+
+        // Fermer le scanner
+        scanner.close();
+    }
+}

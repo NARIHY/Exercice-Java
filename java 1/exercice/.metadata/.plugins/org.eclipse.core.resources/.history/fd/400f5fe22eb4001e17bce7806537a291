@@ -1,0 +1,21 @@
+import java.util.Scanner;
+public class Tp30 {
+
+	public Tp30() {
+		// TODO Auto-generated constructor stub
+	}
+	/*
+	 * Écrire un programme qui s'appelle Factorielle qui permet à l'utilisateur 
+	 * de saisir un entier naturel n puis qui affiche à l'écran la factorielle de celui-ci.
+	 */
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Entrer un nombre entier naturel n");
+		int entier = sc.nextInt();
+		for (int i = entier; i > 0; i--) {
+			System.out.println(i);
+		}
+	}
+
+}

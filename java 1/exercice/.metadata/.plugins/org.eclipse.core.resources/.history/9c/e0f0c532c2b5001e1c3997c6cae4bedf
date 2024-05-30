@@ -1,0 +1,88 @@
+/*
+ * Ecrire un programme qui demande à l'utilisateur de saisir les notes sur 20 des élèves d'une classe. Le nombre d'élèves est choisi au début du programme. Puis le programme affiche la somme, la plus grande valeur, la plus petite, et enfin, la moyenne.
+ */
+
+
+import java.util.Scanner;
+
+public class GestionNotes {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Demander à l'utilisateur le nombre d'élèves
+        System.out.print("Entrez le nombre d'élèves dans la classe : ");
+        int nombreEleves = scanner.nextInt();
+
+        // Vérifier si le nombre d'élèves est positif
+        if (nombreEleves <= 0) {
+            System.out.println("Le nombre d'élèves doit être positif.");
+            return;
+        }
+
+        // Créer un tableau pour stocker les notes
+        double[] notes = new double[nombreEleves];
+
+        // Saisir les notes des élèves
+        for (int i = 0; i < nombreEleves; i++) {
+            System.out.print("Entrez la note de l'élève " + (i + 1) + " sur 20 : ");
+            notes[i] = scanner.nextDouble();
+        }
+
+        // Appeler les fonctions pour calculer la somme, la plus grande, la plus petite et la moyenne
+        double somme = calculerSomme(notes);
+        double plusGrande = trouverPlusGrande(notes);
+        double plusPetite = trouverPlusPetite(notes);
+        double moyenne = calculerMoyenne(notes);
+
+        // Afficher les résultats
+        System.out.println("Somme des notes : " + somme);
+        System.out.println("Plus grande note : " + plusGrande);
+        System.out.println("Plus petite note : " + plusPetite);
+        System.out.println("Moyenne des notes : " + moyenne);
+
+        // Fermer le scanner
+        scanner.close();
+    }
+
+    // Fonction pour calculer la somme des notes
+    public static double calculerSomme(double[] notes) {
+        double somme = 0;
+        for (double note : notes) {
+            somme += note;
+        }
+        return somme;
+    }
+
+    // Fonction pour trouver la plus grande note
+    public static double trouverPlusGrande(double[] notes) {
+        double plusGrande = notes[0];
+        for (double note : notes) {
+            if (note > plusGrande) {
+                plusGrande = note;
+            }
+        }
+        return plusGrande;
+    }
+
+    // Fonction pour trouver la plus petite note
+    public static double trouverPlusPetite(double[] notes) {
+        double plusPetite = notes[0];
+        for (double note : notes) {
+            if (note < plusPetite) {
+                plusPetite = note;
+            }
+        }
+        return plusPetite;
+    }
+
+    // Fonction pour calculer la moyenne des notes
+    public static double calculerMoyenne(double[] notes) {
+        if (notes.length == 0) {
+            return 0; // Gérer le cas d'un tableau vide pour éviter une division par zéro
+        }
+
+        double somme = calculerSomme(notes);
+        return somme / notes.length;
+    }
+}
+

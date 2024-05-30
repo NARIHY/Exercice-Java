@@ -1,0 +1,48 @@
+/*
+ * Ecrire un programme qui permet de tester la présence d'une valeur dans un tableau prédéfini. Le type des valeurs se fait au choix.
+ */
+import java.util.Scanner;
+
+public class PlusPetitElementTableau {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Demander à l'utilisateur la taille du tableau
+        System.out.print("Entrez la taille du tableau : ");
+        int taille = scanner.nextInt();
+
+        // Créer le tableau de type double
+        double[] tableau = new double[taille];
+
+        // Remplir le tableau avec les éléments saisis par l'utilisateur
+        for (int i = 0; i < taille; i++) {
+            System.out.print("Entrez l'élément à l'indice " + i + " : ");
+            tableau[i] = scanner.nextDouble();
+        }
+
+        // Appeler la fonction pour trouver le plus petit élément et l'afficher
+        double plusPetitElement = trouverPlusPetitElement(tableau);
+        System.out.println("Le plus petit élément du tableau est : " + plusPetitElement);
+    }
+
+    // Fonction pour trouver le plus petit élément d'un tableau de type double
+    public static double trouverPlusPetitElement(double[] tableau) {
+        if (tableau.length == 0) {
+            // Gérer le cas d'un tableau vide
+            System.out.println("Le tableau est vide.");
+            return Double.NaN; // Double.NaN représente "Not a Number"
+        }
+
+        double plusPetitElement = tableau[0];
+
+        // Parcourir le tableau pour trouver le plus petit élément
+        for (int i = 1; i < tableau.length; i++) {
+            if (tableau[i] < plusPetitElement) {
+                plusPetitElement = tableau[i];
+            }
+        }
+
+        return plusPetitElement;
+    }
+}
+

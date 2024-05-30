@@ -1,0 +1,19 @@
+import java.util.Scanner;
+public class Tp31 {
+
+	public Tp31() {
+		// TODO Auto-generated constructor stub
+	}
+	/*
+	 * Écrire un programme qui s'appelle PGCD qui demande à l'utilisateur de saisir
+	 *  deux entiers non nuls a et b puis qui affiche à l'écran le plus grand
+	 *   commun diviseur 
+	 *  (PGCD) de ceux-ci.
+	 */
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Entrez un nombre ")
+		
+	}
+
+}

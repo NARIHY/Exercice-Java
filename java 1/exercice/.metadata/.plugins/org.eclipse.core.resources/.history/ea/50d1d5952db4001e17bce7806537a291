@@ -1,0 +1,19 @@
+
+public class Tp29 {
+
+	public Tp29() {
+		// TODO Auto-generated constructor stub
+	}
+
+	/*
+	 * Calcule et affiche la valeur de x^n (lire x puissances n) 
+		 * où x et n sont respectivement un réel et un entier introduits au clavier. 
+		 * après chaque calcul de puissance le programme demande à l'utilisateur s’il veut
+		 * faire un autre calcul ou non.
+
+	 */
+	public static void main(String[] args) {
+		
+	}
+
+}

@@ -1,0 +1,31 @@
+import java.util.Scanner;
+public class Tp21 {
+
+	public static void main(String[] args) {
+		 public static void main(String[] args) {
+		        Scanner scanner = new Scanner(System.in);
+
+		        // Demander le nombre d'entiers à ajouter
+		        System.out.print("Combien d'entiers à ajouter : ");
+		        int nombreEntiers = scanner.nextInt();
+
+		        // Initialiser la variable pour stocker la somme
+		        int somme = 0;
+
+		        // Demander à l'utilisateur d'entrer chaque nombre et les ajouter à la somme
+		        for (int i = 0; i < nombreEntiers; i++) {
+		            System.out.print("Entrez un entier : ");
+		            int entier = scanner.nextInt();
+		            somme += entier;
+		        }
+
+		        // Afficher la somme
+		        System.out.println("La somme vaut " + somme);
+
+		        // Fermer le scanner
+		        scanner.close();
+		    }
+
+	}
+
+}

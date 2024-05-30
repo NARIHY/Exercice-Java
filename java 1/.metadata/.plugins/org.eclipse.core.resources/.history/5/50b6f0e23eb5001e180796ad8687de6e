@@ -1,0 +1,20 @@
+import java.util.Scanner;
+public class Tp30 {
+	/*
+	 * Écrire un programme qui s'appelle Factorielle qui permet à l'utilisateur 
+	 * de saisir un entier naturel n puis qui affiche à l'écran la factorielle de celui-ci.
+	 */
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Saisir un entier naturel");
+		int nombre = sc.nextInt();
+		for (int i = 1; i < nombre; i-- ) {
+			int resultat = nombre *= i;
+			
+		}
+		System.out.println("Le factoriel de " + nombre + "!"+ " est: "+ resultat);
+
+	}
+
+}

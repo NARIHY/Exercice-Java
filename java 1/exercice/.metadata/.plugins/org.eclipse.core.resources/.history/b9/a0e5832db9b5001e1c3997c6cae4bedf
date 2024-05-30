@@ -1,0 +1,16 @@
+
+public class Tp23 {
+
+	public static void main(String[] args) {
+		Scanner scanner = new Scanner(System.in);
+
+        // Demander la hauteur du sapin
+        System.out.print("Entrez la hauteur du sapin : ");
+        int hauteur = scanner.nextInt();
+
+        // Afficher le sapin de Noël
+        afficherSapin(hauteur);
+
+	}
+
+}

@@ -1,0 +1,27 @@
+import java.util.Scanner;
+public class Tp26 {
+
+	/*
+	 * Écrire un algorithme qui, pour donné, calcule la somme :
+	1+2+3+….+(n-1)+n
+
+	 */
+	public static void main(String[] args) {
+		 Scanner sc = new Scanner(System.in);
+
+	        // Demander la valeur de n
+	        System.out.print("Entrez la valeur de n : ");
+	        int n = sc.nextInt();
+
+	        // Calculer et afficher la somme
+	        int somme = 0;
+	        for (int i = 1; i <= n; i++) {
+	            somme += i;
+	        }
+	        //Resultat
+	        System.out.println("La somme de 1 à " + n + " est : " + somme);
+
+
+	}
+
+}

@@ -1,0 +1,19 @@
+import java.util.Scanner;
+public class Tp26 {
+
+	public static void main(String[] args) {
+		 Scanner sc = new Scanner(System.in);
+
+	        // Demander la valeur de n
+	        System.out.print("Entrez la valeur de n : ");
+	        int n = sc.nextInt();
+
+	        // Calculer et afficher la somme
+	        int somme = calculerSomme(n);
+	        //Resultat
+	        System.out.println("La somme de 1 à " + n + " est : " + somme);
+
+
+	}
+
+}

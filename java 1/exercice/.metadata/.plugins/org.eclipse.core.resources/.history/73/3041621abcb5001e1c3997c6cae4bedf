@@ -1,0 +1,51 @@
+import java.util.Scanner;
+
+/*
+ * Calcule et affiche la valeur de x^n (lire x puissances n) 
+	 * où x et n sont respectivement un réel et un entier introduits au clavier. 
+	 * après chaque calcul de puissance le programme demande à l'utilisateur s’il veut
+	 * faire un autre calcul ou non.
+
+ */
+public class Tp29 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        do {
+            // Demander le réel x
+            System.out.print("Entrez le réel x : ");
+            double x = sc.nextDouble();
+
+            // Demander l'entier n
+            System.out.print("Entrez l'entier n : ");
+            int n = sc.nextInt();
+
+            // Calculer et afficher la puissance x^n
+            double resultat = 1.0;
+
+            for (int i = 1; i <= Math.abs(n); i++) {
+                resultat *= x;
+            }
+
+            // Gérer le cas où n est négatif
+            if (n < 0) {
+                resultat = 1 / resultat;
+            }
+
+            System.out.println(x + "^" + n + " = " + resultat);
+
+            // Demander à l'utilisateur s'il veut faire un autre calcul
+            System.out.print("Voulez-vous faire un autre calcul ? (O/N) : ");
+            String reponse = sc.next();
+
+            // Sortir de la boucle si la réponse n'est pas "Oui"
+            if (!reponse.equalsIgnoreCase("O")) {
+                break;
+            }
+
+        } while (true);
+    }
+
+    
+}
+

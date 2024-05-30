@@ -1,0 +1,79 @@
+import java.util.Arrays;
+
+public class Matrice {
+    private int[][] matrice;
+    
+    // Constructeur prenant en paramètre une matrice représentée par un tableau 2D
+    public Matrice(int[][] matrice) {
+        this.matrice = matrice;
+    }
+    
+    // Méthode pour calculer la somme de deux matrices
+    public Matrice sommeMatrices(Matrice autreMatrice) {
+        int[][] resultat = new int[matrice.length][matrice[0].length];
+        
+        for (int i = 0; i < matrice.length; i++) {
+            for (int j = 0; j < matrice[0].length; j++) {
+                resultat[i][j] = matrice[i][j] + autreMatrice.matrice[i][j];
+            }
+        }
+        
+        return new Matrice(resultat);
+    }
+    
+    // Méthode pour calculer le produit de deux matrices
+    public Matrice produitMatrices(Matrice autreMatrice) {
+        int[][] resultat = new int[matrice.length][autreMatrice.matrice[0].length];
+        
+        for (int i = 0; i < matrice.length; i++) {
+            for (int j = 0; j < autreMatrice.matrice[0].length; j++) {
+                for (int k = 0; k < matrice[0].length; k++) {
+                    resultat[i][j] += matrice[i][k] * autreMatrice.matrice[k][j];
+                }
+            }
+        }
+        
+        return new Matrice(resultat);
+    }
+    
+    // Méthode pour calculer le produit d'une matrice par un entier
+    public Matrice produitParEntier(int entier) {
+        int[][] resultat = new int[matrice.length][matrice[0].length];
+        
+        for (int i = 0; i < matrice.length; i++) {
+            for (int j = 0; j < matrice[0].length; j++) {
+                resultat[i][j] = matrice[i][j] * entier;
+            }
+        }
+        
+        return new Matrice(resultat);
+    }
+    
+    // Méthode pour calculer la transposée d'une matrice
+    public Matrice transposee() {
+        int[][] resultat = new int[matrice[0].length][matrice.length];
+        
+        for (int i = 0; i < matrice.length; i++) {
+            for (int j = 0; j < matrice[0].length; j++) {
+                resultat[j][i] = matrice[i][j];
+            }
+        }
+        
+        return new Matrice(resultat);
+    }
+    
+    // Méthode pour calculer le déterminant d'une matrice
+    public int determinant() {
+        // Implémentation du calcul du déterminant (non inclus dans cet exemple)
+        // Cette méthode doit être implémentée selon l'algorithme requis pour le calcul du déterminant
+        // Le code dépendra de l'algorithme choisi (par exemple, méthode de Laplace, méthode de Gauss, etc.)
+        return 0; // À remplacer par le calcul réel du déterminant
+    }
+    
+    // Méthode pour afficher la matrice
+    public void afficherMatrice() {
+        for (int[] ligne : matrice) {
+            System.out.println(Arrays.toString(ligne));
+        }
+    }
+}

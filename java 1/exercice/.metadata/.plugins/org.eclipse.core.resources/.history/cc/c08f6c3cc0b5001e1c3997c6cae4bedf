@@ -1,0 +1,31 @@
+/*
+ *  Ecrire un programme permettant de lire une suite de nombre réels sur le clavier. 
+ *  Le dernier élément à lire est un zéro. Le programme doit afficher la somme des suites lus.
+ */
+import java.util.Scanner;
+
+public class Tp35 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        double nombre;
+        double somme = 0;
+
+        // Lire une suite de nombres réels jusqu'à ce que le dernier soit zéro
+        do {
+            System.out.print("Entrez un nombre réel (0 pour terminer) : ");
+            nombre = scanner.nextDouble();
+
+            // Ajouter le nombre à la somme
+            somme += nombre;
+
+        } while (nombre != 0);
+
+        // Afficher la somme finale
+        System.out.println("La somme des nombres réels est : " + somme);
+
+        // Fermer le scanner
+        scanner.close();
+    }
+}
+

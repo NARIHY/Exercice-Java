@@ -1,0 +1,15 @@
+import java.util.Scanner;
+public class Tp33 {
+
+	public Tp33() {
+		// TODO Auto-generated constructor stub
+	}
+	/*
+	 * Ecrire un programme qui commence à lire un premier nombre n, 
+	 * puis lit des nombres jusqu’à ce que la somme des nombres lus soit au moins égale à n.
+	 */
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		
+	}
+}

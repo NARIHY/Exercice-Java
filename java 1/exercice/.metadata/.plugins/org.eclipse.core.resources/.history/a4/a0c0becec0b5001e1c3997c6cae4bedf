@@ -1,0 +1,9 @@
+/*
+ * Ecrire un programme mettant en œuvre le jeu suivant :
+Le premier utilisateur saisi un entier que le second doit deviner. Pour cela, il a le droit à autant de tentatives qu’il souhaite. A chaque échec, le programme lui indique si l’entier cherché est plus grand ou plus petit que sa proposition. 
+Un score indiquant le nombre de coups joués est mis à jour et affiché lorsque l’entier est trouvé.  
+
+ */
+public class Tp37 {
+
+}

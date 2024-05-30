@@ -1,0 +1,41 @@
+import java.util.Scanner;
+
+public class TP22 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Demander un caractère imprimable
+        System.out.print("Entrez un caractère imprimable : ");
+        char caractere = scanner.next().charAt(0);
+
+        // Demander un nombre
+        System.out.print("Entrez un nombre : ");
+        int nombre = scanner.nextInt();
+
+        // Imprimer une barre horizontale simple
+        imprimerBarreHorizontale(caractere, nombre);
+
+        // Imprimer une barre horizontale double
+        imprimerBarreHorizontaleDouble(caractere, nombre);
+
+        // Fermer le scanner
+        scanner.close();
+    }
+
+    // Fonction pour imprimer une barre horizontale simple
+    public static void imprimerBarreHorizontale(char caractere, int nombre) {
+        for (int i = 0; i < nombre; i++) {
+            System.out.print(caractere);
+        }
+        System.out.println(); // Saut de ligne après la barre
+    }
+
+    // Fonction pour imprimer une barre horizontale double
+    public static void imprimerBarreHorizontaleDouble(char caractere, int nombre) {
+        for (int i = 0; i < nombre; i++) {
+            System.out.print(caractere);
+            System.out.print(caractere); // Imprimer deux fois le caractère
+        }
+        System.out.println(); // Saut de ligne après la barre double
+    }
+}

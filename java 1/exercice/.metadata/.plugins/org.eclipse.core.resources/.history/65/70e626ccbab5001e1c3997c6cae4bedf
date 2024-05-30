@@ -1,0 +1,29 @@
+import java.util.Scanner;
+public class Tp23 {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+
+        // Demander la hauteur du sapin
+        System.out.print("Entrez la hauteur du sapin : ");
+        int hauteur = sc.nextInt();
+
+        // Afficher le sapin de Noël
+        for (int i = 0; i < hauteur; i++) {
+            // Ajouter des espaces avant les étoiles
+            for (int j = 0; j < hauteur - i - 1; j++) {
+                System.out.print(" ");
+            }
+
+            // Ajouter les étoiles
+            for (int k = 0; k < 2 * i + 1; k++) {
+                System.out.print("*");
+            }
+
+            // Aller à la ligne pour la prochaine rangée
+            System.out.println();
+        }
+
+	}
+
+}

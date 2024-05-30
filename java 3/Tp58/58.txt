@@ -1,0 +1,72 @@
+// Personne.java (du TP 51)
+public class Personne {
+    protected String nom;
+    protected int age;
+    protected String sexe;
+    protected String adresse;
+
+    // Constructeur de Personne
+    public Personne(String nom, int age, String sexe, String adresse) {
+        this.nom = nom;
+        this.age = age;
+        this.sexe = sexe;
+        this.adresse = adresse;
+    }
+
+    // Méthode d'affichage des informations de la personne
+    public void afficheInformation() {
+        System.out.println("Nom: " + nom);
+        System.out.println("Age: " + age);
+        System.out.println("Sexe: " + sexe);
+        System.out.println("Adresse: " + adresse);
+    }
+}
+
+// Etudiant.java (du TP 58)
+public class Etudiant extends Personne {
+    private String anneeUniversitaire;
+    private String universite;
+    private String specialite;
+
+    // Constructeur par défaut
+    public Etudiant() {
+        super("inconnu", 0, "inconnu", "inconnu");
+        this.anneeUniversitaire = "inconnue";
+        this.universite = "inconnue";
+        this.specialite = "INCONNU";
+        System.out.println(informationEtudiant());
+    }
+
+    // Constructeur avec paramètres
+    public Etudiant(String nom, int age, String sexe, String adresse, String anneeUniversitaire, String universite, String specialite) {
+        super(nom, age, sexe, adresse);
+        this.anneeUniversitaire = anneeUniversitaire;
+        this.universite = universite;
+        this.specialite = specialite.toUpperCase(); // Convertit la spécialité en majuscules
+        System.out.println(informationEtudiant());
+    }
+
+    // Méthode pour obtenir la valeur de l'étudiant
+    public String valeur(String specialite) {
+        switch (specialite.toUpperCase()) {
+            case "INCONNU":
+                return "INCONNU";
+            case "DEVELOPPEMENT":
+                return "DEVELOPPEMENT";
+            case "RESEAU":
+                return "RESEAU";
+            default:
+                return "INCONNU";
+        }
+    }
+
+    // Méthode pour afficher les informations de l'étudiant
+    public String informationEtudiant() {
+        return "Année universitaire: " + anneeUniversitaire + ", Université: " + universite + ", Spécialité: " + specialite;
+    }
+
+    // Méthode pour retourner "Etudiant"
+    public String autre() {
+        return "Etudiant";
+    }
+}

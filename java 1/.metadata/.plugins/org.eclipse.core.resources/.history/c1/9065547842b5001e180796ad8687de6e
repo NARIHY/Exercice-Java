@@ -1,0 +1,27 @@
+import java.util.Scanner;
+public class Tp24 {
+	/*
+	 * Ecrivez un programme affichant un triangle d'étoiles. L'utilisateur entrera le nombre initial d'étoiles, et le programme affichera les lignes les unes à la suite des autres, chaque ligne perdant une étoile à chaque fois : 
+		Nombre initial d'étoiles : 7
+		
+		*******
+		******
+		*****
+		****
+		***
+		**
+		*
+
+	 */
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Entrez le nombre initiale du triangle: ");
+		int etoile = sc.nextInt();
+		for (int i = etoile; i > 1; i--) {
+			System.out.println("*");
+		}
+
+	}
+
+}

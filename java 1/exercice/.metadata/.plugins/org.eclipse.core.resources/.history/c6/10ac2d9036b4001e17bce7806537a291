@@ -1,0 +1,70 @@
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Scanner;
+public class Tp42 {
+
+	
+
+	/*
+	 * Une organisation vote pour renouveler son directeur.
+	 *  Il y a 5 candidats numérotés de 1 à 5.
+	 *  Les noms des candidats sont, dans l’ordre de leurs numéros : 
+	 *  Ariane, Jean, Lucie, Marc, et Michel.
+	 *   Chaque membre de l’organisation envoie un bulletin de vote qui 
+	 *   porte le numéro qui correspond au candidat de son choix. Écrire un programme
+	 *    pouvant servir à faire le décompte des voix, 
+	 * et afficher le ou les noms des candidats ayant le plus de voix.
+	 */
+
+	public class Election {
+
+	    public static void main(String[] args) {
+	        // Noms des candidats
+	        String candidats[] = {"Ariane", "Jean", "Lucie", "Marc", "Michel"};
+
+	        // Initialiser le décompte des voix
+	        Map<String, Integer> votes = new HashMap<>();
+	        for (String candidat : candidats) {
+	            votes.put(candidat, 0);
+	        }
+
+	        // Saisir les votes des membres de l'organisation
+	        Scanner scanner = new Scanner(System.in);
+	        int nombreMembres;
+	        System.out.print("Entrez le nombre de membres de l'organisation : ");
+	        nombreMembres = scanner.nextInt();
+
+	        for (int i = 0; i < nombreMembres; i++) {
+	            System.out.print("Membre " + (i + 1) + ", votez pour le candidat (1 à 5) : ");
+	            int vote = scanner.nextInt();
+
+	            // Vérifier si le vote est valide
+	            if (vote >= 1 && vote <= 5) {
+	                // Mettre à jour le décompte des voix
+	                String candidatChoisi = candidats[vote - 1];
+	                votes.put(candidatChoisi, votes.get(candidatChoisi) + 1);
+	            } else {
+	                System.out.println("Vote invalide. Veuillez choisir un numéro de candidat entre 1 et 5.");
+	                i--; // Décrémenter pour permettre une nouvelle saisie du vote
+	            }
+	        }
+
+	        // Trouver le(s) candidat(s) ayant le plus de voix
+	        int maxVotes = 0;
+	        for (int votesCandidat : votes.values()) {
+	            if (votesCandidat > maxVotes) {
+	                maxVotes = votesCandidat;
+	            }
+	        }
+
+	        // Afficher le(s) candidat(s) ayant le plus de voix
+	        System.out.println("\nRésultats des votes :");
+	        for (Map.Entry<String, Integer> entry : votes.entrySet()) {
+	            if (entry.getValue() == maxVotes) {
+	                System.out.println(entry.getKey() + " a obtenu " + entry.getValue() + " voix.");
+	            }
+	        }
+	    }
+	}
+
+}

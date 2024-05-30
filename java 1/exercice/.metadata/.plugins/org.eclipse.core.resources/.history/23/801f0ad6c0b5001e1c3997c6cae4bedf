@@ -1,0 +1,43 @@
+/*
+ * Ecrire un programme mettant en œuvre le jeu suivant :
+Le premier utilisateur saisi un entier que le second doit deviner. Pour cela, il a le droit à autant de tentatives qu’il souhaite. A chaque échec, le programme lui indique si l’entier cherché est plus grand ou plus petit que sa proposition. 
+Un score indiquant le nombre de coups joués est mis à jour et affiché lorsque l’entier est trouvé.  
+
+ */
+import java.util.Scanner;
+import java.util.Random;
+
+public class JeuDevineNombre {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        Random random = new Random();
+
+        // Générer un nombre aléatoire à deviner
+        int nombreADeviner = random.nextInt(100) + 1; // Nombre entre 1 et 100 inclus
+        int tentative = 0;
+
+        System.out.println("Bienvenue dans le jeu Devine le Nombre !");
+        System.out.println("Le premier utilisateur a choisi un nombre entre 1 et 100.");
+
+        // Boucle pour les tentatives du deuxième utilisateur
+        while (true) {
+            System.out.print("Entrez votre proposition : ");
+            int proposition = scanner.nextInt();
+            tentative++;
+
+            // Vérifier si la proposition est correcte
+            if (proposition == nombreADeviner) {
+                System.out.println("Bravo ! Vous avez trouvé le nombre en " + tentative + " tentatives.");
+                break; // Sortir de la boucle car le nombre a été trouvé
+            } else if (proposition < nombreADeviner) {
+                System.out.println("Le nombre à deviner est plus grand que votre proposition.");
+            } else {
+                System.out.println("Le nombre à deviner est plus petit que votre proposition.");
+            }
+        }
+
+        // Fermer le scanner
+        scanner.close();
+    }
+}
+

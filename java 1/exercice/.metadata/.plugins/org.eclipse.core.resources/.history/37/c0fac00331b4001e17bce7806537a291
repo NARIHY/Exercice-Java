@@ -1,0 +1,20 @@
+import java.util.Scanner;
+public class Tp32 {
+
+	public Tp32() {
+		// TODO Auto-generated constructor stub
+	}
+	/*
+	 * Ecrire un programme qui demande à l’utilisateur d’entrer une liste d’entiers 
+	 * terminée par l’entier 0 et affiche leur somme. 
+	 * Quel résultat fournit votre programme si on remplace l’addition par une multiplication ?
+	 */
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Entrez le nombre dans la liste: ");
+		int liste = sc.nextInt();
+
+	}
+
+}

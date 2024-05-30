@@ -1,0 +1,39 @@
+import java.util.Scanner;
+
+public class Tp38 {
+
+    public static void main(String[] args) {
+        // Saisir un nombre n au clavier
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Saisissez un nombre n : ");
+        int n = scanner.nextInt();
+
+        // Calculer et afficher le tableau
+        int[] tableau = new int[n + 1];
+
+        for (int i = 0; i <= n; i++) {
+            tableau[i] = calculerSommeEntiers(i);
+        }
+
+        afficherTableau(tableau);
+    }
+
+    /*
+     * Pour mieux avoir une meilleur visualisa
+     */
+    private static int calculerSommeEntiers(int n) {
+        int somme = 0;
+        for (int i = 0; i <= n; i++) {
+            somme += i;
+        }
+        return somme;
+    }
+
+    // Fonction pour afficher le tableau
+    private static void afficherTableau(int[] tableau) {
+        System.out.println("\nTableau résultant :");
+        for (int i = 0; i < tableau.length; i++) {
+            System.out.print(tableau[i] + "\t");
+        }
+    }
+}

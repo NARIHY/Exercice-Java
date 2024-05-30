@@ -1,0 +1,22 @@
+
+public class Tp42 {
+
+	public Tp42() {
+		// TODO Auto-generated constructor stub
+	}
+
+	/*
+	 * Une organisation vote pour renouveler son directeur. Il y a 5 candidats numérotés de 1 à 5.
+	 *  Les noms des candidats sont, dans l’ordre de leurs numéros : 
+	 *  Ariane, Jean, Lucie, Marc, et Michel.
+	 *   Chaque membre de l’organisation envoie un bulletin de vote qui 
+	 *   porte le numéro qui correspond au candidat de son choix. Écrire un programme
+	 *    pouvant servir à faire le décompte des voix, 
+	 * et afficher le ou les noms des candidats ayant le plus de voix.
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

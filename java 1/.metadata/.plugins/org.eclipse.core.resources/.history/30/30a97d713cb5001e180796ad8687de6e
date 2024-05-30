@@ -1,0 +1,19 @@
+
+
+public class Tp27 {
+	/*
+	 * Écrire un programme Java affichant les 15 premiers couplets de la chanson :
+	1 kilomètre à pied, ça use, ça use,
+	1 kilomètre à pied ça use les souliers.
+	2 kilomètres à pied, ça use, ça use,
+	2 kilomètres à pied ça use les souliers.
+	. . .
+	NB : Attention à l’accord du mot « kilomètre ».
+
+	 */
+	public static void main(String[] args) {
+		
+
+	}
+
+}

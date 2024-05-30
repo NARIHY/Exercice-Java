@@ -1,0 +1,43 @@
+import java.util.Scanner;
+public class Tp32 {
+
+	public Tp32() {
+		// TODO Auto-generated constructor stub
+	}
+	/*
+	 * Ecrire un programme qui demande à l’utilisateur d’entrer une liste d’entiers 
+	 * terminée par l’entier 0 et affiche leur somme. 
+	 * Quel résultat fournit votre programme si on remplace l’addition par une multiplication ?
+	 */
+
+	public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        int entier;
+        int somme = 0;
+        int produit = 1;  // Initialisé à 1 pour que la multiplication fonctionne correctement
+
+        // Demander à l'utilisateur d'entrer une liste d'entiers terminée par 0
+        do {
+            System.out.print("Entrez un entier (0 pour terminer) : ");
+            entier = scanner.nextInt();
+
+            // Ajouter l'entier à la somme
+            somme += entier;
+
+            // Multiplier l'entier au produit
+            produit *= entier;
+
+        } while (entier != 0);
+
+        // Afficher la somme
+        System.out.println("La somme des entiers est : " + somme);
+
+        // Afficher le produit
+        System.out.println("Le produit des entiers est : " + produit);
+
+        // Fermer le scanner
+        scanner.close();
+    }
+
+}

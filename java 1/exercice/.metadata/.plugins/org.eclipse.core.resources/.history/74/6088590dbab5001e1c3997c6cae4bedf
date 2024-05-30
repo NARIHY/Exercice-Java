@@ -1,0 +1,24 @@
+
+public class Tp25 {
+
+	public static void main(String[] args) {
+		 Scanner sc = new Scanner(System.in);
+
+	        // Demander la valeur de n
+	        System.out.print("Entrez la valeur de n : ");
+	        int n = sc.nextInt();
+
+	        // Afficher le triangle numérique
+	        for (int i = 1; i <= n; i++) {
+	            // Afficher la ligne actuelle avec les nombres de 1 à i
+	            for (int j = 1; j <= i; j++) {
+	                System.out.print(j + " ");
+	            }
+
+	            // Aller à la ligne pour la prochaine rangée
+	            System.out.println();
+	        }
+
+	}
+
+}

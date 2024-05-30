@@ -1,0 +1,47 @@
+import java.util.Scanner;
+/*
+ * Écrire un programme qui s'appelle PGCD qui demande à l'utilisateur de saisir
+ *  deux entiers non nuls a et b puis qui affiche à l'écran le plus grand
+ *   commun diviseur 
+ *  (PGCD) de ceux-ci.
+ */
+public class Tp31 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Demander à l'utilisateur de saisir deux entiers non nuls a et b
+        System.out.print("Entrez le premier entier non nul a : ");
+        int a = demanderEntierNonNul(scanner);
+
+        System.out.print("Entrez le deuxième entier non nul b : ");
+        int b = demanderEntierNonNul(scanner);
+
+        // Calculer et afficher le PGCD de a et b
+        int pgcd = calculerPGCD(a, b);
+        System.out.println("Le PGCD de " + a + " et " + b + " est : " + pgcd);
+
+        // Fermer le scanner
+        scanner.close();
+    }
+
+    // Fonction pour demander à l'utilisateur un entier non nul
+    public static int demanderEntierNonNul(Scanner scanner) {
+        int entier;
+        do {
+            System.out.print("Entrez un entier non nul : ");
+            entier = scanner.nextInt();
+        } while (entier == 0);
+
+        return entier;
+    }
+
+    // Fonction pour calculer le PGCD de deux entiers
+    public static int calculerPGCD(int a, int b) {
+        while (b != 0) {
+            int temp = b;
+            b = a % b;
+            a = temp;
+        }
+        return Math.abs(a); // Le PGCD est toujours positif
+    }
+}

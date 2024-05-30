@@ -1,0 +1,38 @@
+import java.util.Scanner;
+public class Tp28 {
+
+	/* 
+	 * TP 28 : haja
+		Écrire un programme qui :
+		1. demande un nombre entier n à l’utilisateur ;
+		2. demande n nombres réels à l’utilisateur ;
+		3. affiche la somme de ces 1/n ;
+		4. affiche la moyenne de ces n nombres.
+	 */
+
+	public static void main(String[] args) {
+		Scanner sc= new Scanner(System.in);
+		System.out.println("Entrer un nombre entier n: ");
+		int n = sc.nextInt();
+
+        // Étape 2 : Demander n nombres réels à l'utilisateur et calculer la somme
+        double somme = 0;
+        for (int i = 1; i <= n; i++) {
+            System.out.print("Entrez le nombre réel " + i + " : ");
+            double nombre = scanner.nextDouble();
+            somme += 1 / nombre;
+        }
+
+        // Étape 3 : Afficher la somme de ces 1/n
+        System.out.println("La somme de ces 1/n est : " + somme);
+
+        // Étape 4 : Afficher la moyenne de ces n nombres
+        double moyenne = somme / n;
+        System.out.println("La moyenne de ces n nombres est : " + moyenne);
+
+        // Fermer le scanner
+        scanner.close();
+	}
+
+}
+

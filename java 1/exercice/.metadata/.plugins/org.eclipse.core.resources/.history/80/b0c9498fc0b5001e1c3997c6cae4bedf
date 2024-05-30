@@ -1,0 +1,38 @@
+import java.util.Scanner;
+
+public class Tp36 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        // Initialiser les variables pour le maximum, le minimum et la somme
+        int max = Integer.MIN_VALUE;
+        int min = Integer.MAX_VALUE;
+        int somme = 0;
+
+        // Saisie des nombres positifs, la fin est indiquée par un nombre négatif
+        System.out.println("Saisissez une liste de nombres positifs (terminez par un nombre négatif) :");
+
+        int nombre;
+        do {
+            System.out.print("Entrez un nombre : ");
+            nombre = sc.nextInt();
+
+            // Vérifier si le nombre est positif et mettre à jour max, min et somme
+            if (nombre >= 0) {
+                if (nombre > max) {
+                    max = nombre;
+                }
+                if (nombre < min) {
+                    min = nombre;
+                }
+                somme += nombre;
+            }
+
+        } while (nombre >= 0);
+
+        // Afficher le maximum, le minimum et la somme
+        System.out.println("Le maximum est : " + max);
+        System.out.println("Le minimum est : " + min);
+        System.out.println("La somme est : " + somme);
+    }
+}

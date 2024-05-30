@@ -1,0 +1,22 @@
+
+public class Tp24 {
+	/*
+	 * Ecrivez un programme affichant un triangle d'étoiles. L'utilisateur entrera le nombre initial d'étoiles, et le programme affichera les lignes les unes à la suite des autres, chaque ligne perdant une étoile à chaque fois : 
+		Nombre initial d'étoiles : 7
+		
+		*******
+		******
+		*****
+		****
+		***
+		**
+		*
+
+	 */
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

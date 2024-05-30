@@ -1,0 +1,40 @@
+import java.util.Scanner;
+
+public class Tp34 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Demander à l'utilisateur d'entrer un nombre
+        System.out.print("Entrez un nombre entier positif : ");
+        int nombre = scanner.nextInt();
+
+        // Vérifier si le nombre est premier
+        boolean estPremier = estNombrePremier(nombre);
+
+        // Afficher le résultat
+        if (estPremier) {
+            System.out.println(nombre + " est un nombre premier.");
+        } else {
+            System.out.println(nombre + " n'est pas un nombre premier.");
+        }
+
+        // Fermer le scanner
+        scanner.close();
+    }
+
+    // Fonction pour vérifier si un nombre est premier
+    public static boolean estNombrePremier(int n) {
+        if (n <= 1) {
+            return false; // Les nombres négatifs, 0 et 1 ne sont pas premiers
+        }
+
+        // Vérifier la divisibilité par les nombres de 2 à la racine carrée de n
+        for (int i = 2; i <= Math.sqrt(n); i++) {
+            if (n % i == 0) {
+                return false; // Si n est divisible par i, alors n n'est pas premier
+            }
+        }
+
+        return true; // Si aucun diviseur n'est trouvé, le nombre est premier
+    }
+}
